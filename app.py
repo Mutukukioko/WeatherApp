@@ -1,6 +1,5 @@
 import requests
-
-from Flask import Flask, render_template, request
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -20,7 +19,7 @@ def get_weather(api_key, city):
 def index():
     if request.method == "POST":
         city = request.form.get("city")
-        api_key = "YOUR_API_KEY"  # Replace with your WeatherAPI.com API key
+        api_key = "ae2fa0e696154eb699092948232106"  # Replace with your WeatherAPI.com API key
         weather_data = get_weather(api_key, city)
         if weather_data is not None:
             temperature = weather_data["temperature"]
